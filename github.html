@@ -1,0 +1,92 @@
+<style>
+  body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; padding: 20px; background: #f5f5f5; }
+  .card { background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 20px; }
+  .step { font-size: 20px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; }
+  .subtitle { font-size: 16px; color: #34495e; font-weight: bold; margin-top: 15px; }
+  .code { background: #ecf0f1; padding: 10px; border-radius: 5px; font-family: monospace; white-space: pre-wrap; }
+  a { color: #2980b9; text-decoration: underline; }
+</style>
+
+<div class="card">
+  <div class="step">1. GitHubへのログイン方法</div>
+  <div class="subtitle">▶ GitHubにアクセス</div>
+  <p><a href="https://github.com" target="_blank">https://github.com</a> にアクセス。</p>
+
+  <div class="subtitle">▶ アカウント作成（初めての場合）</div>
+  <ul>
+    <li>右上の「Sign up」をクリック</li>
+    <li>ユーザー名、メール、パスワードを入力</li>
+  </ul>
+
+  <div class="subtitle">▶ ログイン</div>
+  <ul>
+    <li>右上の「Sign in」からログイン</li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="step">2. リポジトリの作成</div>
+  <ul>
+    <li>右上「＋」→「New repository」</li>
+    <li>名前例: <code>my-html-page</code></li>
+    <li><b>Public</b> を選択（GitHub Pages用）</li>
+    <li>READMEにチェック → <b>Create repository</b></li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="step">3. HTMLファイルの追加方法</div>
+
+  <div class="subtitle">方法A: GitHub上で作成</div>
+  <ol>
+    <li>「Add file」→「Create new file」</li>
+    <li>ファイル名を <code>index.html</code> に</li>
+    <li>HTMLを記述（例は下）</li>
+    <li>「Commit new file」をクリック</li>
+  </ol>
+  <div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;私のウェブサイト&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;こんにちは、世界！&lt;/h1&gt;
+  &lt;p&gt;これはGitHub Pagesで公開された私の最初のページです。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </div>
+
+  <div class="subtitle">方法B: ファイルをアップロード</div>
+  <ol>
+    <li>「Add file」→「Upload files」</li>
+    <li><code>index.html</code> をドラッグ＆ドロップ</li>
+    <li>「Commit changes」をクリック</li>
+  </ol>
+</div>
+
+<div class="card">
+  <div class="step">4. HTMLの修正</div>
+  <ul>
+    <li>「Code」→ <code>index.html</code> をクリック</li>
+    <li>右上の鉛筆マークで編集</li>
+    <li>下にスクロールし「Commit changes」で保存</li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="step">5. GitHub Pagesで公開</div>
+  <ul>
+    <li>「Settings」→「Pages」</li>
+    <li><b>Source</b>: mainブランチ + <code>/(root)</code></li>
+    <li>「Save」ボタンをクリック</li>
+    <li>URL表示: <code>https://ユーザー名.github.io/リポジトリ名/</code></li>
+  </ul>
+  <p><b>変更を加えるたびに自動で再デプロイされます</b></p>
+</div>
+
+<div class="card">
+  <div class="step">6. URLを第三者に共有</div>
+  <ul>
+    <li>表示されたGitHub PagesのURLをコピー</li>
+    <li>メールやSNSで共有 → そのままブラウザで閲覧可能</li>
+  </ul>
+</div>
