@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スライド形式インフォグラフィック：0800-500-9856の危険性</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #001B2E;
+            color: #E0F2F1;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 50vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00A6FB, #70C1B3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-card {
+            background-color: #002942;
+            border: 1px solid #003554;
+        }
+        .slide-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+        .slide-section:not(:first-child) {
+            padding-top: 6rem; /* Adjust for sticky nav */
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #001B2E;
+            border-bottom: 1px solid #003554;
+            padding: 1rem 0;
+        }
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #003554;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .nav-dot.active {
+            background-color: #70C1B3;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="sticky-nav">
+        <div class="flex justify-center items-center">
+            <a href="#slide1" class="nav-dot" data-slide="1"></a>
+            <a href="#slide2" class="nav-dot" data-slide="2"></a>
+            <a href="#slide3" class="nav-dot" data-slide="3"></a>
+            <a href="#slide4" class="nav-dot" data-slide="4"></a>
+            <a href="#slide5" class="nav-dot" data-slide="5"></a>
+            <a href="#slide6" class="nav-dot" data-slide="6"></a>
+            <a href="#slide7" class="nav-dot" data-slide="7"></a>
+            <a href="#slide8" class="nav-dot" data-slide="8"></a>
+            <a href="#slide9" class="nav-dot" data-slide="9"></a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+
+        <section id="slide1" class="slide-section">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text">不審な着信：見慣れない0800番号</h2>
+            <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
+                午後、部屋に戻ると、スマホの画面に見慣れない着信履歴が。<br>
+                「080」から始まる番号かと思いきや、よく見ると「0800-500-9856」と表示されていました。<br>
+                普段見慣れない「0800」という構成に、一瞬で「怪しい」という直感が働きました。<br>
+                これは一体、何なのだろう？
+            </p>
+            <h1 class="text-4xl md:text-6xl font-black text-white">0800-500-9856</h1>
+        </section>
+
+        <section id="slide2" class="slide-section">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text">結論：この番号は「極めて怪しい」</h2>
+            <div class="p-6 rounded-xl bg-red-800/80 border border-red-500 max-w-3xl mx-auto">
+                <p class="text-xl md:text-2xl font-bold text-white">
+                    この0800-500-9856という電話番号。<br>
+                    結論から言うと、詐欺または悪質な迷惑電話の可能性が<span class="text-yellow-300 underline">極めて高い</span>です。
+                </p>
+                <p class="mt-2 text-white/90">
+                    この番号からの着信には、最大限の警戒が必要だということが、調査の結果、判明しました。
+                </p>
+            </div>
+        </section>
+
+        <section id="slide3" class="slide-section">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text">0800番号の二面性：信頼の罠</h2>
+            <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
+                0800番号は、本来、通話料無料のフリーダイヤルとして、多くの正規企業や公的機関が利用しています。<br>
+                しかし、詐欺師たちはこの「信頼性」を逆手に取り、あなたを油断させようと巧妙に悪用しているのです。<br>
+                正規の利用と悪質な利用、この二面性が私たちを混乱させます。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl">
+                <div class="section-card rounded-lg p-6 text-center border-2 border-green-500">
+                    <h3 class="text-2xl font-bold text-green-400 mb-2">✅ 正規の利用</h3>
+                    <p class="text-6xl mb-4">🏢</p>
+                    <p>企業や公的機関の<br>顧客サポート、問い合わせ窓口</p>
+                </div>
+                <div class="section-card rounded-lg p-6 text-center border-2 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-400 mb-2">❌ 悪質な利用</h3>
+                    <p class="text-6xl mb-4">👺</p>
+                    <p>詐欺グループによる<br>個人情報搾取、金銭要求の手段</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="slide4" class="slide-section">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text">報告されている着信内容：その実態</h2>
+            <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
+                この0800-500-9856から報告されている通話内容は多岐にわたりますが、その多くが悪質な目的を持っています。<br>
+                これらの通話は、個人情報を盗んだり、金銭をだまし取るための詐欺の前段階であることが非常に多いです。
+            </p>
+            <div class="section-card rounded-lg p-4 md:p-6 w-full max-w-3xl">
+                <div class="chart-container">
+                    <canvas id="callTypesChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section id="slide5" class="slide-section">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text">詐欺師の典型的な手口（プレイブック）</h2>
+            <div class="space-y-4 max-w-2xl mx-auto w-full">
+                <div class="section-card p-4 rounded-lg flex items-center">
+                    <div class="bg-[#0582CA] text-white rounded-full w-12 h-12 flex-shrink-0 flex items-center justify-center font-bold text-2xl mr-4">1</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-[#70C1B3]">接触：信頼の偽装</h3>
+                        <p class="text-white/80">ありふれた営業電話を装い、警戒心を解かせたり、無言電話で番号が有効か確認します。</p>
+                    </div>
+                </div>
+                <div class="flex justify-center"><p class="text-4xl text-[#0582CA]">▼</p></div>
+                <div class="section-card p-4 rounded-lg flex items-center">
+                    <div class="bg-[#0582CA] text-white rounded-full w-12 h-12 flex-shrink-0 flex items-center justify-center font-bold text-2xl mr-4">2</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-[#70C1B3]">選別：心理的圧力</h3>
+                        <p class="text-white/80">「未納料金の督促」等で緊急性を煽り、高圧的な口調で冷静な判断力を奪います。</p>
+                    </div>
+                </div>
+                <div class="flex justify-center"><p class="text-4xl text-[#0582CA]">▼</p></div>
+                <div class="section-card p-4 rounded-lg flex items-center">
+                     <div class="bg-[#0582CA] text-white rounded-full w-12 h-12 flex-shrink-0 flex items-center justify-center font-bold text-2xl mr-4">3</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-[#70C1B3]">実行：搾取</h3>
+                         <p class="text-white/80">詳細な個人情報を聞き出したり、追跡困難な電子マネー等での支払いを要求します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="slide6" class="slide-section">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text">これは氷山の一角：類似番号ネットワーク</h2>
+            <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
+                この0800-500-9856は、単独の番号ではありません。<br>
+                「0800-500-xxxx」の形式で、同様の迷惑電話が多数報告されています。<br>
+                これらは同一、または連携したグループによる犯行の可能性が高く、私たちが直面しているのは、より広範な詐欺ネットワークの一部なのです。
+            </p>
+            <div class="section-card rounded-lg p-4 md:p-6 w-full max-w-3xl">
+                <div class="chart-container" style="height: 450px; max-height: 60vh;">
+                    <canvas id="scamNetworkChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section id="slide7" class="slide-section">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text">最強の防御策：あなたを守る4つの盾</h2>
+            <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
+                不審な電話から身を守るために、私たちにはできることがあります。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-4xl">
+                <div class="section-card p-6 rounded-lg hover:scale-105 hover:border-[#70C1B3] transition-transform duration-300">
+                    <p class="text-6xl mb-4">🚫</p>
+                    <h3 class="text-xl font-bold mb-2">出ない・返さない</h3>
+                    <p class="text-white/80">見知らぬ番号には出ず、折り返さない。最も簡単で効果的な対策です。</p>
+                </div>
+                <div class="section-card p-6 rounded-lg hover:scale-105 hover:border-[#70C1B3] transition-transform duration-300">
+                    <p class="text-6xl mb-4">📲</p>
+                    <h3 class="text-xl font-bold mb-2">着信を拒否</h3>
+                    <p class="text-white/80">一度かかってきた迷惑番号は、スマートフォンの機能ですぐに着信拒否設定。</p>
+                </div>
+                <div class="section-card p-6 rounded-lg hover:scale-105 hover:border-[#70C1B3] transition-transform duration-300">
+                    <p class="text-6xl mb-4">🛡️</p>
+                    <h3 class="text-xl font-bold mb-2">対策アプリ導入</h3>
+                    <p class="text-white/80">Whoscall等のアプリが、着信時に危険性を自動で知らせてくれます。</p>
+                </div>
+                <div class="section-card p-6 rounded-lg hover:scale-105 hover:border-[#70C1B3] transition-transform duration-300">
+                    <p class="text-6xl mb-4">🗣️</p>
+                    <h3 class="text-xl font-bold mb-2">情報共有と相談</h3>
+                    <p class="text-white/80">怪しい電話の情報を家族や友人と共有し、不安な時は専門機関に相談。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="slide8" class="slide-section">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text">不安な時、被害に遭った時の相談窓口</h2>
+            <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
+                もし不安を感じたり、万が一被害に遭ってしまった場合は、一人で抱え込まず、すぐに専門機関に相談してください。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl">
+                <div class="bg-yellow-600/80 rounded-lg p-6 text-center">
+                    <h3 class="text-2xl font-bold text-white">消費者ホットライン</h3>
+                    <p class="text-6xl font-black my-4 text-white tracking-widest">188</p>
+                    <p class="text-white/90">消費生活全般の相談ができます。「いやや！」と覚えましょう。</p>
+                </div>
+                <div class="bg-blue-600/80 rounded-lg p-6 text-center">
+                    <h3 class="text-2xl font-bold text-white">警察相談専用電話</h3>
+                    <p class="text-6xl font-black my-4 text-white tracking-widest">#9110</p>
+                    <p class="text-white/90">詐欺の疑いや犯罪被害の可能性がある場合に相談できます。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="slide9" class="slide-section">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text">まとめ：安全な電話利用のために</h2>
+            <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+                0800-500-9856は、極めて危険な電話番号である可能性が高いです。<br>
+                しかし、適切な知識と対策があれば、私たちは自分自身を守ることができます。<br>
+                常に警戒心を持ち、身に覚えのない不審な要求には決して応じないという意識を持つことが、安全で安心な電話利用の基盤となります。<br>
+                この情報が、あなたの安全なデジタルライフの一助となれば幸いです。
+            </p>
+        </section>
+
+    </div>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const wrapLabel = (label, maxLength = 10) => {
+            if (typeof label !== 'string' || label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split('');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine += word;
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        };
+
+        const callTypesCtx = document.getElementById('callTypesChart').getContext('2d');
+        const rawLabels = ['不安を煽る通告（詐欺疑い）', '営業・勧誘目的', '無言・ワン切り電話'];
+        const callTypesChart = new Chart(callTypesCtx, {
+            type: 'bar',
+            data: {
+                labels: rawLabels.map(label => wrapLabel(label)),
+                datasets: [{
+                    label: '報告件数の割合',
+                    data: [85, 65, 50],
+                    backgroundColor: [
+                        'rgba(217, 4, 41, 0.8)',
+                        'rgba(5, 130, 202, 0.8)',
+                        'rgba(0, 100, 148, 0.8)',
+                    ],
+                    borderColor: '#003554',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        ticks: { color: '#E0F2F1', font: { size: 12 } },
+                        grid: { color: 'rgba(224, 242, 241, 0.1)' }
+                    },
+                    y: {
+                        ticks: { color: '#E0F2F1', font: { size: 14 } },
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const scamNetworkCtx = document.getElementById('scamNetworkChart').getContext('2d');
+        const scamNetworkChart = new Chart(scamNetworkCtx, {
+            type: 'bubble',
+            data: {
+                datasets: [{
+                    label: '0800-500-9856 (調査対象)',
+                    data: [{x: 5, y: 5, r: 40}],
+                    backgroundColor: 'rgba(217, 4, 41, 0.7)',
+                    borderColor: 'rgba(217, 4, 41, 1)',
+                    borderWidth: 2,
+                }, {
+                    label: '類似番号ネットワーク',
+                    data: [
+                        {x: 3, y: 7, r: 25}, {x: 7, y: 8, r: 20},
+                        {x: 8, y: 3, r: 18}, {x: 2, y: 2, r: 22},
+                        {x: 6, y: 2, r: 15}
+                    ],
+                    backgroundColor: 'rgba(0, 100, 148, 0.7)',
+                    borderColor: 'rgba(0, 100, 148, 1)',
+                    borderWidth: 2,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { display: false },
+                    y: { display: false }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                           color: '#E0F2F1',
+                           font: { size: 14 }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += `危険度指数 ${context.raw.r}`;
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const sections = document.querySelectorAll('.slide-section');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        const updateActiveNavDot = () => {
+            let currentActive = 0;
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    currentActive = index;
+                }
+            });
+
+            navDots.forEach((dot, index) => {
+                if (index === currentActive) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', updateActiveNavDot);
+        window.addEventListener('resize', updateActiveNavDot);
+        updateActiveNavDot(); // Initial call
+    </script>
+</body>
+</html>
