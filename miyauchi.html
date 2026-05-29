@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>燃費データ解析レポート（スマホ最適化版）</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 15px;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+            color: #f3f4f6;
+            background-color: #111827; /* スマホで見やすいダーク背景 */
+            line-height: 1.6;
+            font-size: 16pt; /* スマホ用の特大文字 */
+        }
+
+        /* ヘッダー部分 */
+        .mobile-header {
+            background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+            padding: 25px 15px;
+            text-align: center;
+            border-bottom: 4px solid #10b981;
+            margin-bottom: 25px;
+            border-radius: 12px;
+        }
+
+        .mobile-header h1 {
+            margin: 0;
+            font-size: 24pt;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .mobile-header p {
+            margin: 10px 0 0 0;
+            font-size: 14pt;
+            color: #9ca3af;
+        }
+
+        /* メイン数字のボックス */
+        .metric-box {
+            background-color: #1f2937;
+            border-radius: 16px;
+            padding: 30px 20px;
+            margin-bottom: 25px;
+            border: 2px solid #374151;
+            text-align: center;
+        }
+
+        .metric-lbl {
+            font-size: 14pt;
+            color: #9ca3af;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .metric-num {
+            font-size: 42pt;
+            font-weight: bold;
+            color: #10b981;
+            line-height: 1;
+        }
+
+        .metric-unit {
+            font-size: 18pt;
+            color: #9ca3af;
+            margin-left: 6px;
+        }
+
+        /* 見出し（特大・緑のアクセント） */
+        h2 {
+            font-size: 18pt;
+            color: #ffffff;
+            border-left: 6px solid #10b981;
+            padding-left: 12px;
+            margin: 40px 0 20px 0;
+            font-weight: bold;
+        }
+
+        /* 比較カード */
+        .comparison-card {
+            background-color: #1f2937;
+            border-radius: 16px;
+            padding: 20px;
+            border-left: 8px solid #f59e0b;
+            margin-bottom: 20px;
+        }
+
+        .comp-title {
+            font-size: 15pt;
+            font-weight: bold;
+            color: #f59e0b;
+            margin-bottom: 8px;
+        }
+
+        /* データ行 */
+        .data-row {
+            margin-bottom: 15px;
+            background-color: #1f2937;
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid #374151;
+        }
+
+        .row-title {
+            font-size: 13pt;
+            color: #9ca3af;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .row-val {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        /* 解説ブロック */
+        .qa-block {
+            background-color: #1f2937;
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 20px;
+            border: 1px solid #374151;
+        }
+
+        .qa-q {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #38bdf8;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #374151;
+            padding-bottom: 10px;
+        }
+
+        .qa-a {
+            font-size: 14pt;
+            color: #e5e7eb;
+        }
+
+        .highlight-text {
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        /* 結論ボックス */
+        .conclusion-box {
+            background-color: #1e1b4b;
+            border: 2px solid #4338ca;
+            border-radius: 16px;
+            padding: 25px 20px;
+            font-size: 14pt;
+            margin-top: 30px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 11pt;
+            color: #6b7280;
+            border-top: 1px solid #374151;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-header">
+        <h1>知人の怪物燃費の真実</h1>
+        <p>39,908km・28.1km/L データ徹底解析</p>
+    </div>
+
+    <div class="metric-box">
+        <div class="metric-lbl">ご知人の実生涯燃費</div>
+        <div class="metric-num">28.1<span class="metric-unit">km/L</span></div>
+        <div class="metric-lbl" style="margin-top: 12px; color: #10b981;">※カタログ値（28.0）を完全超越！</div>
+    </div>
+
+    <h2>📊 一般平均ドライバーとの比較</h2>
+    
+    <div class="comparison-card">
+        <div class="comp-title">一般的な平均実燃費</div>
+        <div class="qa-a">同等クラスのハイブリッド車では <span class="highlight-text">20 〜 22 km/L</span> が平均値です。</div>
+    </div>
+
+    <div class="data-row">
+        <div class="row-title">4万キロ走行でのガソリン消費量</div>
+        <div class="row-val">一般平均：約 1,900 L</div>
+        <div class="row-val" style="color: #10b981; margin-top: 4px;">ご知人：約 1,420 L <span style="font-size:12pt; font-weight:normal; color:#9ca3af;">(480Lの節約)</span></div>
+    </div>
+
+    <div class="data-row">
+        <div class="row-title">ガソリン代の差額（1L＝170円換算）</div>
+        <div class="row-val" style="color: #f59e0b; font-size: 20pt; margin-top: 4px;">約 80,000 円の得！</div>
+    </div>
+
+    <h2>🚗 後続車を渋滞させている疑惑？</h2>
+
+    <div class="qa-block">
+        <div class="qa-q">Q. 超ノロノロ運転で迷惑をかけている？</div>
+        <div class="qa-a">
+            <span class="highlight-text" style="font-size:16pt;">A. いいえ、その可能性は極めて低いです！</span><br><br>
+            トヨタのハイブリッドシステムは、時速20〜30km以下のダラダラ運転や、いつまでも加速しないダラダラした走り方をすると、電力を消費しすぎてエンジンが強制起動し、<strong>逆に燃費がガクッと悪化します。</strong>
+        </div>
+    </div>
+
+    <div class="qa-block">
+        <div class="qa-q">Q. では、なぜこの数字が出るのか？</div>
+        <div class="qa-a">
+            一番燃費が伸びるのは、<strong>「最初の加速は周囲の流れに合わせてスムーズに行い、巡航速度（50〜60km/h）に達したらアクセルを少し緩めてモーター走行（EVモード）を維持する」</strong>というスマートな走り方です。<br><br>
+            つまり、後ろをイライラさせる運転ではなく、周囲の交通の流れに完璧に調和した<strong>「超・スムーズな運転」</strong>をされています。
+        </div>
+    </div>
+
+    <h2>💡 結論：この知人の運転スタイル</h2>
+    <div class="conclusion-box">
+        <p style="margin: 0 0 12px 0; font-weight: bold; color: #818cf8; font-size: 16pt;">📌 プロのデータ見解</p>
+        ご知人は周囲に迷惑をかけるエコ運転（ノロノロ運転）ではなく、<strong>「先の信号をよく見て無駄なブレーキを踏まない」「車間距離を一定に保ち、余計な加減速をしない」</strong>という、同乗していても最高に心地よい【超・運転が上手な達人】、あるいは【信号が皆無の完璧なルートを走っている人】です。
+    </div>
+
+    <div class="footer">
+        スマートフォン閲覧最適化版（大文字・高コントラスト仕様）<br>
+        Total Mileage: 39,908 km
+    </div>
+
+</body>
+</html>
