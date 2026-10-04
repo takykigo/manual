@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ショートメッセージの「開封済み」徹底解説</title>
+  <style>
+    :root {
+      --bg-color: #f7f9fa;
+      --card-bg: #ffffff;
+      --primary: #007aff;
+      --primary-dark: #0056b3;
+      --pixel-blue: #1a73e8;
+      --sms-green: #34c759;
+      --text-main: #222222;
+      --text-sub: #555555;
+      --border-color: #e5e8eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      font-size: 18px; /* スマホで見やすい大きめ文字 */
+      padding: 16px 12px 40px;
+    }
+
+    header {
+      text-align: center;
+      padding: 24px 12px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #007aff, #1a73e8);
+      color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 22px 18px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border-color);
+    }
+
+    h2 {
+      font-size: 22px;
+      border-left: 6px solid var(--primary);
+      padding-left: 12px;
+      margin-bottom: 18px;
+      color: #111111;
+      display: flex;
+      align-items: center;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin: 18px 0 10px;
+      color: #222222;
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+
+    .lead-box {
+      background-color: #eef6ff;
+      border: 2px solid #bfe0ff;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      font-size: 19px;
+      font-weight: bold;
+      color: #004b99;
+    }
+
+    /* 吹き出しのサンプル表示 */
+    .bubble-demo {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .bubble {
+      padding: 14px 18px;
+      border-radius: 20px;
+      max-width: 85%;
+      font-size: 17px;
+      line-height: 1.4;
+    }
+
+    .bubble-imessage {
+      background-color: var(--primary);
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .bubble-pixel {
+      background-color: var(--pixel-blue);
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .bubble-sms {
+      background-color: var(--sms-green);
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .status-text {
+      font-size: 14px;
+      color: #777777;
+      text-align: right;
+      margin-top: 4px;
+    }
+
+    /* 比較テーブル */
+    .table-container {
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 17px;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background-color: #f0f4f8;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .badge-ok {
+      display: inline-block;
+      background-color: #e6f7ec;
+      color: #0d8a3d;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .badge-no {
+      display: inline-block;
+      background-color: #fde8e8;
+      color: #c81e1e;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    /* 手順リスト */
+    ol.steps {
+      padding-left: 0;
+      list-style: none;
+      counter-reset: step-counter;
+    }
+
+    ol.steps li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 48px;
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+
+    ol.steps li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 34px;
+      height: 34px;
+      background-color: #007aff;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 34px;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .pixel-step li::before {
+      background-color: #1a73e8;
+    }
+
+    .highlight {
+      background-color: #fff3bf;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .note-box {
+      background-color: #fffbe6;
+      border-left: 5px solid #ffcc00;
+      padding: 14px;
+      margin-top: 14px;
+      border-radius: 0 10px 10px 0;
+      font-size: 16px;
+      color: #665200;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ショートメッセージの謎</h1>
+    <div class="subtitle">なぜ「開封済み」が出る人と出ない人がいるの？</div>
+  </header>
+
+  <!-- 結論 -->
+  <div class="card">
+    <div class="lead-box">
+      💡 結論：相手が「開封確認（既読）を通知する設定」をONにしているかどうかで決まります！
+    </div>
+    <p>電話番号宛てのメッセージには<strong>「従来のSMS」</strong>と、インターネット回線を使う<strong>「新世代メッセージ（RCSやiMessage）」</strong>の2種類があります。</p>
+    <p>「開封済み」が出るのは、<strong>お互いが新世代メッセージ規格を使っていて、かつ読んだ側が通知を許可しているときだけ</strong>です。</p>
+  </div>
+
+  <!-- 出る理由・出ない理由 -->
+  <div class="card">
+    <h2>なぜ差が出るの？（iPhone ✕ Google Pixel）</h2>
+    
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>組み合わせ</th>
+            <th>通信規格</th>
+            <th>開封済みの表示</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>iPhone ⇄ iPhone</strong></td>
+            <td>iMessage<br><small>(青い吹き出し)</small></td>
+            <td><span class="badge-ok">出る</span> ※相手がONの場合</td>
+          </tr>
+          <tr>
+            <td><strong>Pixel ⇄ Pixel</strong></td>
+            <td>RCS チャット<br><small>(濃い青の吹き出し)</small></td>
+            <td><span class="badge-ok">出る</span> ※相手がONの場合</td>
+          </tr>
+          <tr>
+            <td><strong>iPhone ⇄ Pixel</strong><br><small>(iOS 18以降でRCS有効時)</small></td>
+            <td>RCS チャット</td>
+            <td><span class="badge-ok">出る</span> ※お互いONの場合</td>
+          </tr>
+          <tr>
+            <td><strong>従来のSMS通信時</strong><br><small>(緑の吹き出し)</small></td>
+            <td>通常のSMS<br><small>(電話回線)</small></td>
+            <td><span class="badge-no">絶対に出ない</span><br><small>仕組みが存在しません</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-box">
+      <strong>POINT：</strong><br>
+      相手がメッセージを読んでも「開封済み」にならない最大の理由は、<strong>「相手が設定で既読通知をOFFにしているから」</strong>または<strong>「緑の吹き出し（通常のSMS）で届いているから」</strong>です。
+    </div>
+  </div>
+
+  <!-- iPhoneの設定方法 -->
+  <div class="card">
+    <h2 style="border-left-color: #007aff;">🍏 iPhoneで「開封済み」を切り替える方法</h2>
+    <p>自分がメッセージを読んだとき、相手に読んだことを知らせるかどうかの設定です。</p>
+
+    <ol class="steps">
+      <li>ホーム画面の<strong>「設定」</strong>（歯車マーク）を開く</li>
+      <li>一覧から<strong>「メッセージ」</strong>をタップ<br><small style="color: #666;">（見つからない場合は一番上まで引っ張って検索窓に入力）</small></li>
+      <li>画面を少し下にスクロールする</li>
+      <li><strong>「開封証明を送信」</strong>のスイッチを切り替える
+        <div style="margin-top: 8px;">
+          ・<span class="highlight">相手に既読を知らせたい</span> ➔ <strong>ON（緑色）</strong><br>
+          ・<span class="highlight">相手に知らせたくない</span> ➔ <strong>OFF（白色・グレー）</strong>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <!-- Google Pixelの設定方法 -->
+  <div class="card">
+    <h2 style="border-left-color: #1a73e8;">📱 Google Pixelで「開封済み」を切り替える方法</h2>
+    <p>Pixel（Android）の標準メッセージアプリでの設定手順です。</p>
+
+    <ol class="steps pixel-step">
+      <li>青い吹き出しアイコンの<strong>「メッセージ」</strong>アプリを開く</li>
+      <li>画面右上にある<strong>ご自身のアカウントアイコン（丸い写真や文字）</strong>をタップ</li>
+      <li>メニューから<strong>「メッセージの設定」</strong>を選択</li>
+      <li>一番上にある<strong>「RCS チャット」</strong>をタップ</li>
+      <li><strong>「既読レポートを送信」</strong>のスイッチを切り替える
+        <div style="margin-top: 8px;">
+          ・<span class="highlight">相手に既読を知らせたい</span> ➔ <strong>ON（青色）</strong><br>
+          ・<span class="highlight">相手に知らせたくない</span> ➔ <strong>OFF（グレー）</strong>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <!-- まとめチェック -->
+  <div class="card" style="background-color: #fbfcfe;">
+    <h2>💡 覚えておくと安心なポイント</h2>
+    <ul style="padding-left: 24px; font-size: 18px; line-height: 1.8;">
+      <li>自分の画面で「開封証明を送信」を <strong>OFF</strong> にしていても、<strong>相手が ON にしていれば相手の「開封済み」は自分に見えます</strong>。</li>
+      <li>自分の設定を OFF にすると、「自分が読んだこと」だけが相手に秘密になります。</li>
+      <li>「開封済み」が出ない相手は、単にプライバシー設定を OFF にしているか、電波・規格（通常のSMS）の違いなので、気にしすぎなくて大丈夫です。</li>
+    </ul>
+  </div>
+
+</body>
+</html>
